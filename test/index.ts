@@ -1,4 +1,5 @@
 import { expect } from "chai";
+import "@nomiclabs/hardhat-ethers";
 import { ethers } from "hardhat";
 
 describe("Greeter", function () {

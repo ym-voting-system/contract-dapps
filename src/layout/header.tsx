@@ -120,7 +120,7 @@ function headerLayout() {
       const signer = provider.getSigner();
       const contract = new ethers.Contract(VotingAddress, Voting.abi, signer);
       try {
-        const workflow = await contract.queryFilter("WorkflowStatusChange");
+        const workflow = await contract.queryFilter("TrustedWorkflowStatusChange");
         console.log(workflow[0]);
         //setWorkflowStatus(workflow);
       } catch (e) {

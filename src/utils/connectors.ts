@@ -15,8 +15,8 @@ const RPC_URLS = {
  * 42 : Kovan
  * 80001 : Mumbai (Polygon Testnet)
  * 137 : Polygon Mainnet
- * 31337 : Hardhat
  * 1337 : Ganache
+ * 31337 : Hardhat
  */
 export const injected = new InjectedConnector({
   supportedChainIds: [1, 3, 4, 5, 42, 137, 1337, 31337],
