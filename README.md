@@ -2,7 +2,7 @@
 
 <a href="http://www.typescriptlang.org/"><img src="https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg?style=flat-square" height="20"></a>
 <a href="https://twitter.com/younesmjl"><img src="https://img.shields.io/twitter/follow/younesmjl.svg?style=social&label=Follow&maxAge=3600" height="20"></a>
-![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/younesmjl/21183273cef6a16459dd73c2314520c6/raw/react-dapps-badges.json)
+![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/younesmjl/a34d78b87f5b70f82d398e90ba761749/raw/voting-dapps-badges.json)
 [![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
 The web's most popular front-end template for building decentralized application with
@@ -27,7 +27,7 @@ The web's most popular front-end template for building decentralized application
 - Starts a JSON-RPC server — `yarn hardhat node`
 - Deploy your contract — `npx hardhat run scripts/deploy.ts --network localhost`
 - Launch the app — `yarn dev`, it will become available at [http://localhost:3000](http://localhost:3000/)
-- Add local network
+- Add local network to your wallet
   - ChainID — `31337`
   - Currency — `Ethereum`
   - Currency Symbol — `ETH`
@@ -36,15 +36,15 @@ The web's most popular front-end template for building decentralized application
 
 ## Features
 
-📦 Registration of a blank list of voters.
-🦾 The administrator to start the proposal registration session.
-⚡️ Registered voters to register their proposals.
-🦾 The administrator to end the proposal registration session.
-🦾 The administrator to begin the voting session.
-⚡️ Registered voters to vote for their preferred proposals.
-🦾 The administrator to end the voting session.
-🦾 The administrator to tally the votes.
-🔥 Everyone to see the results.
+- 📦 Registration of a blank list of voters.
+- 🦾 The administrator to start the proposal registration session.
+- ⚡️ Registered voters to register their proposals.
+- 🦾 The administrator to end the proposal registration session.
+- 🦾 The administrator to begin the voting session.
+- ⚡️ Registered voters to vote for their preferred proposals.
+- 🦾 The administrator to end the voting session.
+- 🦾 The administrator to tally the votes.
+- 🔥 Everyone to see the results.
 
 ## Directory Structure <a name="directory-sructure"></a>
 
@@ -60,7 +60,7 @@ The web's most popular front-end template for building decentralized application
 `├────` [`artifacts`](./src/artifacts) — compiled artifacts (build-inf, abi...) <br>
 `├────` [`assets`](./src/assets) — Assets such as css, sass, img files<br>
 `├────` [`components`](./src/components) — Reusable components for pages and layout<br>
-`├────` [`hooks`](./src/hooks) — React hooks such as `, `, etc.<br>
+`├────` [`hooks`](./src/hooks) — React hooks such as `UseContract`, etc.<br>
 `├────` [`layout`](./src/layout) — Reusable page templates<br>
 `├────` [`pages`](./src/pages) — Pages of applications<br>
 `├────` [`App.tsx`](./src/App.tx) — App Container and Routes<br>
@@ -77,8 +77,7 @@ The web's most popular front-end template for building decentralized application
   [ESLint](https://eslint.org/), [Prettier](https://prettier.io/),
   [Yarn](https://yarnpkg.com/),
   [Vite](https://vitejs.dev/)
-- [Github Actions](https://docs.github.com/en/actions),
-  [Dependabot](https://github.com/dependabot),[Gist](https://gist.github.com/)
+- [Github Actions](https://docs.github.com/en/actions), [Vercel](https://vercel.com), [Dependabot](https://github.com/dependabot), [Gist](https://gist.github.com/)
 
 ## Requirements <a name="requirements"></a>
 
@@ -126,4 +125,4 @@ The web's most popular front-end template for building decentralized application
 
 ---
 
-<sup>Made with ♥ by Younès Manjal ([@younesmjl](https://twitter.com/younesmjl).</sup>
+<sup>Made with ♥ by Younès Manjal ([@younesmjl](https://twitter.com/younesmjl)).</sup>

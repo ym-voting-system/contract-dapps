@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/YM-Voting-System/react-interface/compare/v1.0.0...v1.0.1) (2022-04-27)
+
+
+### Bug Fixes
+
+* **icon:** add a component with target blank for all icons component with url ([ab6756f](https://github.com/YM-Voting-System/react-interface/commit/ab6756f0635753527136c3dd788448b21d525a8c))
+
 # 1.0.0 (2022-04-27)
 
 
