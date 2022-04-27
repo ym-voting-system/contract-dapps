@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/ym-voting-system/react-interface/compare/v1.1.0...v1.2.0) (2022-04-27)
+
+
+### Features
+
+* **ethernal:** add private blockchain explorer like ganache ([6212414](https://github.com/ym-voting-system/react-interface/commit/62124148462e3f020094820a91011f5e167a94c2))
+* **ganache:** add ganache wallet connection ([164f859](https://github.com/ym-voting-system/react-interface/commit/164f8593c625c90da10cb07c851620ca3110d68c))
+
 # [1.1.0](https://github.com/YM-Voting-System/react-interface/compare/v1.0.1...v1.1.0) (2022-04-27)
 
 
