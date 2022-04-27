@@ -119,22 +119,30 @@ export default function Home() {
               </List.Item>
               <List.Item>
                 🦾 <b>TypeChain </b> - Hardhat plugin - Automatically generate
-                TypeScript bindings for smartcontracts while using Hardhat.
-              </List.Item>
-              <List.Item>⚙️ automatic Deploy in local node </List.Item>
-              <List.Item>
-                ⚡️ React 18, Vite, Yarn, ESBuild - born with fastness
-              </List.Item>
-              <List.Item> 🔥 Layout system </List.Item>
-              <List.Item>
-                🔥 Path aliases (@Components, @Layout, @Pages){" "}
+                TypeScript bindings for Smart Contracts while using Hardhat.
               </List.Item>
               <List.Item>
-                🎨 Components Library with Mantine - 🛠️ Pre-configured with code
-                quality tools: ESLint, Prettier, TypeScript, Cypress, Vitest,
-                Github Actions
+                ⚙️ <b>Automatic</b> Deploy in local node
               </List.Item>
-              <List.Item>⚙️ Deploy on Vercel, zero-config</List.Item>
+              <List.Item>
+                ⚡️ <b>Fast apps</b> with React 18, Vite, Yarn, ESBuild
+              </List.Item>
+              <List.Item>
+                🔥<b> Layout </b>system and <b>Routes</b>
+              </List.Item>
+              <List.Item>
+                🔥 <b>Path aliases </b> (@Components, @Layout, @Pages...)
+              </List.Item>
+              <List.Item>
+                🎨 <b>Components Library </b> with Mantine
+              </List.Item>
+              <List.Item>
+                🛠️ <b> Pre-configured </b>with code quality tools: ESLint,
+                Prettier, TypeScript, Cypress, Vitest
+              </List.Item>
+              <List.Item>
+                ⚙️ <b>CI/CD</b>: Github Action and Vercel
+              </List.Item>
             </List>
           </div>
           <Image src={image} className={classes.image} />
