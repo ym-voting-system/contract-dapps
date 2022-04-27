@@ -27,7 +27,7 @@ The web's most popular front-end template for building decentralized application
 - Starts a JSON-RPC server — `yarn hardhat node`
 - Deploy your contract — `npx hardhat run scripts/deploy.ts --network localhost`
 - Launch the app — `yarn dev`, it will become available at [http://localhost:3000](http://localhost:3000/)
-- Add local network
+- Add local network to your wallet
   - ChainID — `31337`
   - Currency — `Ethereum`
   - Currency Symbol — `ETH`
