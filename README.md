@@ -21,7 +21,7 @@ The web's most popular front-end template for building decentralized application
 ## Getting Started <a name="getting-started"></a>
 
 - Clone the repo<br />
-  `git clone -o seed -b main --single-branch https://github.com/younesmjl/react-dapps-boilerplate.git`
+  `git clone -o seed -b main --single-branch https://github.com/YM-Voting-System/react-interface.git`
 - Install project dependencies — `yarn install`
 - Compile your contract — `yarn hardhat compile`
 - Starts a JSON-RPC server — `yarn hardhat node`
@@ -75,22 +75,22 @@ The web's most popular front-end template for building decentralized application
 
 ### Backend <a name="backend"></a>
 
-`npx hardhat accounts` — Prints the list of accounts
-`npx hardhat compile` — Compiles the entire project, building all artifacts
-`npx hardhat clean` — Clears the cache and deletes all artifacts
-`npx hardhat test` — Runs mocha tests
-`npx hardhat node` — Starts a JSON-RPC server on top of Hardhat Network
-`npx hardhat help` — Prints this message
-`REPORT_GAS=true npx hardhat test` —
-`npx hardhat coverage` —
-`npx hardhat run scripts/deploy.ts` — Runs a user-defined script after compiling
-`TS_NODE_FILES=true npx ts-node scripts/deploy.ts` —
-`npx eslint '**/\*.{js,ts}'` —
-`npx eslint '**/_.{js,ts}' --fix` —
-`npx prettier '\*\*/_.{json,sol,md}' --check` —
-`npx prettier '**/\*.{json,sol,md}' --write` —
-`npx solhint 'contracts/**/_.sol'` —
-`npx solhint 'contracts/\*\*/_.sol' --fix` —
+- `npx hardhat accounts` — Prints the list of accounts
+- `npx hardhat compile` — Compiles the entire project, building all artifacts
+- `npx hardhat clean` — Clears the cache and deletes all artifacts
+- `npx hardhat test` — Runs mocha tests
+- `npx hardhat node` — Starts a JSON-RPC server on top of Hardhat Network
+- `npx hardhat help` — Prints this message
+- `REPORT_GAS=true npx hardhat test` —
+- `npx hardhat coverage` —
+- `npx hardhat run scripts/deploy.ts` — Runs a user-defined script after compiling
+- `TS_NODE_FILES=true npx ts-node scripts/deploy.ts` —
+- `npx eslint '**/\*.{js,ts}'` —
+- `npx eslint '**/_.{js,ts}' --fix` —
+- `npx prettier '\*\*/_.{json,sol,md}' --check` —
+- `npx prettier '**/\*.{json,sol,md}' --write` —
+- `npx solhint 'contracts/**/_.sol'` —
+- `npx solhint 'contracts/\*\*/_.sol' --fix` —
 
 ### Frontend <a name="frontend"></a>
 
