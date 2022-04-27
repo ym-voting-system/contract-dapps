@@ -21,7 +21,7 @@ contract Admin is Common {
     {
         require(
             whitelist[_address].isRegistered != true,
-            "This address is already whitelisted"
+            "address is already whitelisted"
         );
         whitelist[_address].isRegistered = true;
         emit VoterRegistered(_address);
