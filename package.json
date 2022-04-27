@@ -5,7 +5,7 @@
   "homepage": "https://younesmjl.github.io/tuto-react-mantine/",
   "scripts": {
     "dev": "vite",
-    "build": "npx hardhat compile && tsc && vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview",
     "prepare": "husky install",
     "commit": "git cz",

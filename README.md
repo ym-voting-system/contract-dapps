@@ -97,7 +97,8 @@ The web's most popular front-end template for building decentralized application
 - `npx hardhat node` — Starts a JS ON-RP C server on top of Hardhat Network
 - `npx hardhat check` — Run Solhint for static code analysis
 - `npx hardhat test` — Runs mocha tests
-- `npx hardhat coverage` —
+- `npx hardhat test --parallel` Run tests in parallel
+- `npx hardhat coverage` — Check the percentage of tests coverage
 - `npx hardhat clean` — Clears the cache a nd deletes all artifacts
 - `npx hardhat help` — Prints this message
 - `REPORT_GAS=true npx hardhat test` —
