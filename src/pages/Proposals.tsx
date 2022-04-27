@@ -19,25 +19,25 @@ function ProposalsPage() {
 
   /*Web3*/
   const [proposals, setProposals] = useState("");
-  const [allProposals, setAllProposals] = useState<object>({});
+  //const [allProposals, setAllProposals] = useState<object>({});
   const [contract, write] = useContract();
 
   function addProposal() {
     setLoad(true);
-    write(
+    return write(
       contract?.userAddProposal(proposals),
       "User add proposals",
       "The proposal has been added to the smart contract",
       "The proposal has  not been added to the smart contract: "
     );
   }
-  function fetchProposal() {
+  /*function fetchProposal() {
     provider.on("ProposalRegistered", (ProposalRegistered: any) => {
       console.log({ ProposalRegistered });
       setAllProposals({ ProposalRegistered });
     });
     console.log(allProposals);
-  }
+  }*/
 
   return (
     <div>
@@ -63,8 +63,6 @@ function ProposalsPage() {
         >
           Check
         </Button>
-
-        <Button onClick={fetchProposal}>fetch</Button>
 
         {proposals}
       </Paper>

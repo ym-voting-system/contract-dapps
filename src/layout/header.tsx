@@ -74,12 +74,12 @@ function headerLayout() {
       });
     }
   }
-
+  /*
   useEffect(() => {
     WorkflowStatus();
     return () => setWorkflowStatus([]);
   }, [active]);
-
+*/
   useEffect(() => {
     try {
       if (active) {
@@ -112,7 +112,7 @@ function headerLayout() {
       }
     }
   };
-
+  /*
   async function WorkflowStatus() {
     if (active) {
       const signer = provider.getSigner();
@@ -120,7 +120,7 @@ function headerLayout() {
       try {
         const workflow = await contract.queryFilter("WorkflowStatusChange");
         console.log(workflow[0]);
-        /*setWorkflowStatus(workflow);*/
+        //setWorkflowStatus(workflow);
       } catch (e) {
         const error: any = e as Error;
         console.log(error.message);
@@ -134,6 +134,7 @@ function headerLayout() {
       }
     }
   }
+  */
 
   async function disconnect() {
     try {

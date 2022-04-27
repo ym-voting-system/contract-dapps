@@ -31,11 +31,11 @@ function useContract() {
   }, [provider]);
 
   async function write(
-    contract: Function,
+    contract: Promise<any>,
     name: String,
     message: string,
     errorMsg: string = ""
-  ) {
+  ): Promise<any> {
     const id = name.split(" ").join("");
     const title = name;
     try {
@@ -49,7 +49,6 @@ function useContract() {
         autoClose: false,
       });
       //setProposals("");
-      console.log(transaction);
     } catch (e) {
       const error: any = e as Error;
       const message = error.data ? error.data.message : e;
@@ -59,10 +58,11 @@ function useContract() {
         color: "red",
         message: `${errorMsg} ${message}`,
       });
+      return error;
     }
   }
 
-  return [contract, write];
+  return [contract, write] as const; //const assertions
 }
 
 export default useContract;

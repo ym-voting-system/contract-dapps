@@ -23,11 +23,11 @@ function GreeterInteraction() {
 
   useEffect(() => {
     fetchGreeting();
-    return () => setGreetingValue(null);
+    return () => setGreetingValue("");
   }, [active]);
 
   /* Contract Valeue */
-  const [greeting, setGreetingValue] = useState(null);
+  const [greeting, setGreetingValue] = useState("");
   const [load, setLoad] = useState(false);
 
   //Get data of blockchain
@@ -72,7 +72,7 @@ function GreeterInteraction() {
       const signer = provider.getSigner();
       const contract = new ethers.Contract(greeterAddress, Greeter.abi, signer);
       const transaction = await contract.setGreeting(greeting);
-      setGreetingValue(null);
+      setGreetingValue("");
       try {
         await transaction.wait();
         await fetchGreeting();

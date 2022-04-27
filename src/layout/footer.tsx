@@ -5,7 +5,13 @@ import {
   ActionIcon,
   Text,
 } from "@mantine/core";
-import { BrandTwitter, BrandYoutube, BrandInstagram } from "tabler-icons-react";
+import { Link } from "react-router-dom";
+import {
+  BrandTwitter,
+  BrandYoutube,
+  BrandInstagram,
+  BrandLinkedin,
+} from "tabler-icons-react";
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -49,14 +55,27 @@ export default function FooterSocial() {
           React - Mantine
         </Text>
         <Group spacing={0} className={classes.links} position="right" noWrap>
-          <ActionIcon size="lg">
+          <ActionIcon
+            component={Link}
+            to={{ pathname: "https://twitter.com/younesmjl" }}
+            size="lg"
+            target="_blank"
+          >
             <BrandTwitter size={18} />
+          </ActionIcon>
+          <ActionIcon
+            component={Link}
+            to={{
+              pathname:
+                "https://twitter.com/youneshttps://www.linkedin.com/in/younes-manjal/",
+            }}
+            target="_blank"
+            size="lg"
+          >
+            <BrandLinkedin size={18} />
           </ActionIcon>
           <ActionIcon size="lg">
             <BrandYoutube size={18} />
-          </ActionIcon>
-          <ActionIcon size="lg">
-            <BrandInstagram size={18} />
           </ActionIcon>
         </Group>
       </Container>
