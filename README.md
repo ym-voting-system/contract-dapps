@@ -27,6 +27,24 @@ The web's most popular front-end template for building decentralized application
 - Starts a JSON-RPC server — `yarn hardhat node`
 - Deploy your contract — `npx hardhat run scripts/deploy.ts --network localhost`
 - Launch the app — `yarn dev`, it will become available at [http://localhost:3000](http://localhost:3000/)
+- Add local network
+  - ChainID — `31337`
+  - Currency — `Ethereum`
+  - Currency Symbol — `ETH`
+  - Currency decimal's — `18`
+  - RPC URL — `http://127.0.0.1:8545/`
+
+## Features
+
+📦 Registration of a blank list of voters.
+🦾 The administrator to start the proposal registration session.
+⚡️ Registered voters to register their proposals.
+🦾 The administrator to end the proposal registration session.
+🦾 The administrator to begin the voting session.
+⚡️ Registered voters to vote for their preferred proposals.
+🦾 The administrator to end the voting session.
+🦾 The administrator to tally the votes.
+🔥 Everyone to see the results.
 
 ## Directory Structure <a name="directory-sructure"></a>
 

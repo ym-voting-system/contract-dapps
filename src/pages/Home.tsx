@@ -89,7 +89,6 @@ export default function Home() {
           <div className={classes.content}>
             <Title className={classes.title}>
               A <span className={classes.highlight}>modern</span> React dapps
-              Boilerplate
             </Title>
             <Text color="dimmed" mt="md">
               Build an amazing Dapps with all settings of you needs.
