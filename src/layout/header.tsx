@@ -8,6 +8,7 @@ import {
   Menu,
   Divider,
   Select,
+  ActionIcon,
 } from "@mantine/core";
 
 import { useEffect, useState } from "react";
@@ -21,6 +22,7 @@ import {
   Copy,
   CurrencyEthereum,
   ArrowBarToRight,
+  BrandGithub,
 } from "tabler-icons-react";
 
 /*
@@ -315,6 +317,14 @@ function headerLayout() {
           ]}
         />
 
+        <ActionIcon
+          component="a"
+          href="https://github.com/YM-Voting-System/react-interface"
+          variant="outline"
+          target="_blank"
+        >
+          <BrandGithub size={18} />
+        </ActionIcon>
         <LightDarkButton />
       </div>
     </Header>

@@ -11,6 +11,7 @@ import {
   BrandYoutube,
   BrandInstagram,
   BrandLinkedin,
+  BrandGithub,
 } from "tabler-icons-react";
 
 const useStyles = createStyles((theme) => ({
@@ -56,26 +57,28 @@ export default function FooterSocial() {
         </Text>
         <Group spacing={0} className={classes.links} position="right" noWrap>
           <ActionIcon
-            component={Link}
-            to={{ pathname: "https://twitter.com/younesmjl" }}
+            component="a"
+            href="https://twitter.com/younesmjl"
             size="lg"
             target="_blank"
           >
             <BrandTwitter size={18} />
           </ActionIcon>
           <ActionIcon
-            component={Link}
-            to={{
-              pathname:
-                "https://twitter.com/youneshttps://www.linkedin.com/in/younes-manjal/",
-            }}
+            component="a"
+            href="https://twitter.com/youneshttps://www.linkedin.com/in/younes-manjal/"
             target="_blank"
             size="lg"
           >
             <BrandLinkedin size={18} />
           </ActionIcon>
-          <ActionIcon size="lg">
-            <BrandYoutube size={18} />
+          <ActionIcon
+            component="a"
+            href="https://github.com/YM-Voting-System/react-interface"
+            size="lg"
+            target="_blank"
+          >
+            <BrandGithub size={18} />
           </ActionIcon>
         </Group>
       </Container>
