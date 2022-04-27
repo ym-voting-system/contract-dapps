@@ -94,12 +94,13 @@ The web's most popular front-end template for building decentralized application
 
 - `npx hardhat accounts` — Prints the list of accounts
 - `npx hardhat compile` — Compiles the entire project, building all artifacts
-- `npx hardhat clean` — Clears the cache and deletes all artifacts
+- `npx hardhat node` — Starts a JS ON-RP C server on top of Hardhat Network
+- `npx hardhat check` — Run Solhint for static code analysis
 - `npx hardhat test` — Runs mocha tests
-- `npx hardhat node` — Starts a JSON-RPC server on top of Hardhat Network
+- `npx hardhat coverage` —
+- `npx hardhat clean` — Clears the cache a nd deletes all artifacts
 - `npx hardhat help` — Prints this message
 - `REPORT_GAS=true npx hardhat test` —
-- `npx hardhat coverage` —
 - `npx hardhat run scripts/deploy.ts` — Runs a user-defined script after compiling
 - `TS_NODE_FILES=true npx ts-node scripts/deploy.ts` —
 - `npx eslint '**/\*.{js,ts}'` —
