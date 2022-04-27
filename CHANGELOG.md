@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/ym-voting-system/react-interface/compare/v1.2.0...v1.2.1) (2022-04-27)
+
+
+### Bug Fixes
+
+* **yarn.lock:** add yarn lock ([a82d3e3](https://github.com/ym-voting-system/react-interface/commit/a82d3e34f020b9238e632370cd2fb114498b61e0))
+
 # [1.2.0](https://github.com/ym-voting-system/react-interface/compare/v1.1.0...v1.2.0) (2022-04-27)
 
 

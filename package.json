@@ -1,7 +1,7 @@
 {
   "name": "mantine-vite",
   "private": true,
-  "version": "1.2.0",
+  "version": "1.2.1",
   "homepage": "https://younesmjl.github.io/tuto-react-mantine/",
   "scripts": {
     "dev": "vite",
