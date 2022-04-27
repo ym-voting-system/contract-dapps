@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/YM-Voting-System/react-interface/compare/v1.0.1...v1.1.0) (2022-04-27)
+
+
+### Features
+
+* **home:** customize home page ([4b59d0c](https://github.com/YM-Voting-System/react-interface/commit/4b59d0c13d71429fac57a23d29adf3a347b5bb3f))
+
 ## [1.0.1](https://github.com/YM-Voting-System/react-interface/compare/v1.0.0...v1.0.1) (2022-04-27)
 
 
