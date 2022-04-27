@@ -126,4 +126,4 @@ The web's most popular front-end template for building decentralized application
 
 ---
 
-<sup>Made with ♥ by Younès Manjal ([@younesmjl](https://twitter.com/younesmjl).</sup>
+<sup>Made with ♥ by Younès Manjal ([@younesmjl](https://twitter.com/younesmjl)).</sup>
