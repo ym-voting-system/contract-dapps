@@ -19,7 +19,7 @@ const RPC_URLS = {
  * 1337 : Ganache
  */
 export const injected = new InjectedConnector({
-  supportedChainIds: [1, 3, 4, 5, 42, 137, 31337],
+  supportedChainIds: [1, 3, 4, 5, 42, 137, 1337, 31337],
 });
 
 /**QR Code */
