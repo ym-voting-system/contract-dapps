@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/ym-voting-system/react-interface/compare/v1.2.1...v1.2.2) (2022-04-28)
+
+
+### Bug Fixes
+
+* **artifacts:** add artifacts ([906f5d6](https://github.com/ym-voting-system/react-interface/commit/906f5d6f3dc6e73e6612a76b94d72a8d3d6fbe9a))
+
 ## [1.2.1](https://github.com/ym-voting-system/react-interface/compare/v1.2.0...v1.2.1) (2022-04-27)
 
 
