@@ -1,7 +1,7 @@
 {
   "name": "mantine-vite",
   "private": true,
-  "version": "1.2.1",
+  "version": "1.2.2",
   "homepage": "https://younesmjl.github.io/tuto-react-mantine/",
   "scripts": {
     "dev": "vite",
@@ -25,7 +25,6 @@
     "@web3-react/injected-connector": "^6.0.7",
     "@web3-react/walletconnect-connector": "^6.2.13",
     "eslint-import-resolver-typescript": "^2.7.1",
-    "hardhat-ethernal": "^0.7.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
