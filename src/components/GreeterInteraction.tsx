@@ -12,8 +12,8 @@ import { Send, CurrencyEthereum, Database } from "tabler-icons-react";
  * Wallet && Blockchain interaction */
 import { ethers } from "ethers";
 import { useWeb3React } from "@web3-react/core";
-import Greeter from "../artifacts/contracts/Greeter.sol/Greeter.json";
-const greeterAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512";
+import { Greeter } from "@utils/getContract";
+const greeterAddress = Greeter.address;
 
 function GreeterInteraction() {
   const context = useWeb3React();

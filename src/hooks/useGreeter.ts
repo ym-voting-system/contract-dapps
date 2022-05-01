@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { ethers } from "ethers";
-import Voting from "../artifacts/contracts/Voting.sol/Voting.json";
 import { useNotifications } from "@mantine/notifications";
-const VotingAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+import { Greeter } from "@utils/getContract";
 
-function useContract() {
+function useGreeter() {
   /**Mantine */
   const notifications = useNotifications();
 
@@ -19,8 +18,8 @@ function useContract() {
         if (active) {
           const signer = provider.getSigner();
           const instanceContract = new ethers.Contract(
-            VotingAddress,
-            Voting.abi,
+            Greeter.address,
+            Greeter.abi,
             signer
           );
           setContract(instanceContract);
@@ -65,4 +64,4 @@ function useContract() {
   return [contract, write] as const; //const assertions
 }
 
-export default useContract;
+export default useGreeter;

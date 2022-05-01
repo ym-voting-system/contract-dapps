@@ -31,7 +31,8 @@
       "@layout/*": ["./layout/*"],
       "@pages/*": ["./pages/*"],
       "@utils/*": ["./utils/*"],
-      "@contract/*": ["./artifacts/contracts/*"]
+      "@contract/*": ["./artifacts/contracts/*"],
+      "@hooks/*": ["./hooks/*"]
     }
   },
   "include": ["src"],
