@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 /*
  * Mantine UI Library */
-import { Paper, Title } from "@mantine/core";
+import { Button, Paper, Title } from "@mantine/core";
 import { useNotifications } from "@mantine/notifications";
 
 /*YM Components */
@@ -12,6 +12,7 @@ import VotingInteraction from "@components/VotingInteraction";
 
 /*
  * Wallet && Blockchain interaction */
+
 import { ethers } from "ethers";
 import { useWeb3React } from "@web3-react/core";
 import { Voting } from "@utils/getContract";
@@ -79,6 +80,34 @@ function VoterManagment() {
     }
   }
 
+  /**
+   *
+   */
+
+  function handleDeployContract(event: MouseEvent<HTMLButtonElement>) {
+    event.preventDefault();
+    async function deployVotingContract(signer: Signer): Promise<void> {
+      const contract = new ethers.ContractFactory(
+        Voting.abi,
+        Voting.bytecode,
+        signer
+      );
+
+      try {
+        const votingContract = await contract.deploy();
+
+        await votingContract.deployed();
+
+        window.alert(`Voting deployed to: ${votingContract.address}`);
+      } catch (error: any) {
+        window.alert(
+          "Error!" + (error && error.message ? `\n\n${error.message}` : "")
+        );
+      }
+    }
+    const signer = provider.getSigner();
+    deployVotingContract(signer);
+  }
   return (
     <div>
       <Paper
@@ -101,6 +130,7 @@ function VoterManagment() {
         >
           Voters Management
         </Title>
+        <Button onClick={handleDeployContract}>deploy</Button>
         <VotingInteraction
           state={{ register, whitelisted }}
           setState={{ setVoterValue, setIsWhitelisted }}
