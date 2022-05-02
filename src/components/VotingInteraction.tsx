@@ -1,11 +1,7 @@
 /*
- * React Utils*/
-import { useEffect, useState } from "react";
-
-/*
  * Mantine UI Library */
 import { Button, Group, Text, TextInput, Title } from "@mantine/core";
-import { useNotifications } from "@mantine/notifications";
+
 import {
   Send,
   CurrencyEthereum,
@@ -13,88 +9,29 @@ import {
   Checklist,
 } from "tabler-icons-react";
 
-/*
- * Wallet && Blockchain interaction */
-import { ethers } from "ethers";
-import { useWeb3React } from "@web3-react/core";
-import Voting from "../artifacts/contracts/Voting.sol/Voting.json";
-const VotingAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+type SVoter = { register: string; whitelisted: string };
+type SetVoter = { setVoterValue: Function; setIsWhitelisted: Function };
+type SetWeb3 = {
+  setVoter: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  isWhitelisted: React.MouseEventHandler<HTMLButtonElement> | undefined;
+};
 
-function VotingInteraction() {
-  /* React */
-  const [load, setLoad] = useState(false);
+interface IVoting<S, A, W> {
+  state: S;
+  setState: A;
+  web3Interaction: W;
+  load: Boolean;
+}
 
-  /* Mantine*/
-  const notifications = useNotifications();
-
-  /* Web3 */
-  const context = useWeb3React();
-  const { active, library: provider } = context;
-  const [register, setVoterValue] = useState("");
-  const [whitelisted, setIsWhitelisted] = useState("");
-
-  //setData on blockchain
-  async function setVoter() {
-    setLoad(true);
-    if (active) {
-      const signer = provider.getSigner();
-      const contract = new ethers.Contract(VotingAddress, Voting.abi, signer);
-      try {
-        const transaction = await contract.addAddressWhitelist(register);
-        await transaction.wait();
-        notifications.showNotification({
-          id: "UpdatedContract",
-          title: "Updated Contract",
-          color: "green",
-          message: "Add voter to white list",
-          autoClose: false,
-        });
-        setVoterValue("");
-        setLoad(false);
-      } catch (e) {
-        const error: any = e as Error;
-        setLoad(false);
-        const message = error.data ? error.data.message : e;
-        notifications.showNotification({
-          id: "ErorrSetVoterFetch",
-          title: "Error adding Voter",
-          color: "red",
-          message: `${message}`,
-        });
-      }
-    }
-  }
-
-  async function isWhitelisted() {
-    if (active) {
-      const signer = provider.getSigner();
-      const contract = new ethers.Contract(VotingAddress, Voting.abi, signer);
-      try {
-        const transaction = await contract.isWhitelisted(whitelisted);
-        const { isRegistered } = transaction;
-        console.log(isRegistered);
-        const color = isRegistered ? "green" : "orange";
-        notifications.showNotification({
-          id: "isWhitelisted",
-          title: "Adress is whitelisted",
-          color: color,
-          message: `${whitelisted} is ${
-            isRegistered ? "whitelisted" : "not whitelisted"
-          }`,
-        });
-      } catch (e) {
-        const error: any = e as Error;
-        console.log(error.message);
-        const message = error.data ? error.data.message : error;
-        notifications.showNotification({
-          id: "ErorrVoterIsWhitelisted",
-          title: "Erorr Voter Is Whitelisted",
-          color: "red",
-          message: `${message}`,
-        });
-      }
-    }
-  }
+function VotingInteraction({
+  state,
+  setState,
+  web3Interaction,
+  load,
+}: IVoting<SVoter, SetVoter, SetWeb3>) {
+  const { register, whitelisted } = state;
+  const { setVoterValue, setIsWhitelisted } = setState;
+  const { setVoter, isWhitelisted } = web3Interaction;
 
   return (
     <>

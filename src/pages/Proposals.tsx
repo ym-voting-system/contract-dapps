@@ -1,26 +1,16 @@
 import { Button, Paper, TextInput } from "@mantine/core";
-import VotingInteraction from "@components/VotingInteraction";
-import TableExample from "@components/TableVote";
-import Buttons from "@components/ChipsExample";
-import useContract from "../hooks/useContract";
-import { useNotifications } from "@mantine/notifications";
+import useVoting from "@hooks/useVoting";
 import { useState } from "react";
 import { Checklist, CurrencyEthereum, Send } from "tabler-icons-react";
-import { ethers } from "ethers";
-import { useWeb3React } from "@web3-react/core";
 
 function ProposalsPage() {
-  const context = useWeb3React();
-  const { library: provider } = context;
-
   const [load, setLoad] = useState(false);
   /**Mantine */
-  // notifications = useNotifications();
 
   /*Web3*/
   const [proposals, setProposals] = useState("");
   //const [allProposals, setAllProposals] = useState<object>({});
-  const [contract, write] = useContract();
+  const [contract, write] = useVoting();
 
   function addProposal() {
     setLoad(true);
