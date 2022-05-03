@@ -23,12 +23,15 @@ async function main() {
   const MyContractV2 = await ethers.getContractFactory('MyContractV2');
   const PROXY = "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0";
   
+  
+  
+
 
 	//addr0
 	const myProxyV2 = await upgrades.upgradeProxy(PROXY, MyContractV2);
 	await myProxyV2.deployed();
 	console.log("MyContract deployed to :"+myProxyV2.address);
-  console.log(MyContractV2.interface);
+	console.log("Implementation (main contract)",await upgrades.erc1967.getImplementationAddress(myProxyV2.address));	
 
 
 }

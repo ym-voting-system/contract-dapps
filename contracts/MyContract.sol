@@ -4,6 +4,7 @@ pragma solidity 0.8.13;
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+import "hardhat/console.sol";
 
 contract MyContract is Initializable, UUPSUpgradeable, OwnableUpgradeable  {
 
@@ -17,6 +18,7 @@ contract MyContract is Initializable, UUPSUpgradeable, OwnableUpgradeable  {
         __UUPSUpgradeable_init();
 		confirmationNeeded = _confirmationNeeded;
 		for(uint i;i<_owners.length; i++){
+			console.log(_owners[i]);
 			owners.push(_owners[i]);
 		}
 	}
