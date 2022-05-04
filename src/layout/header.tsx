@@ -7,7 +7,6 @@ import {
   Button,
   Menu,
   Divider,
-  Select,
   ActionIcon,
 } from "@mantine/core";
 
@@ -15,7 +14,7 @@ import { useEffect, useState } from "react";
 
 import LightDarkButton from "@components/LightDarkButton";
 import { Link } from "react-router-dom";
-import { hideNotification, useNotifications } from "@mantine/notifications";
+import { useNotifications } from "@mantine/notifications";
 import {
   Alien,
   Network,
@@ -29,9 +28,8 @@ import {
  * Wallet && Blockchain interaction */
 import { ethers } from "ethers";
 import { useWeb3React } from "@web3-react/core";
-import { injected, walletconnect } from "@utils/connectors";
-import Voting from "../artifacts/contracts/Voting.sol/Voting.json";
-const VotingAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+import { injected } from "@utils/connectors";
+import SwitchNetwork from "@components/SwitchNetwork";
 
 function headerLayout() {
   const theme = useMantineTheme();
@@ -51,31 +49,17 @@ function headerLayout() {
     activate,
     deactivate,
     active,
-    error,
   } = context;
 
   /* Contract Value */
   const [networkName, setNetworkName] = useState<string | null>("unknown");
   const [providerName, setProviderName] = useState(null);
-  const [Workflow, setWorkflowStatus] = useState<Array<object>>([]);
+  // const [Workflow, setWorkflowStatus] = useState<Array<object>>([]);
 
   useEffect(() => {
     connectWalletOnPageLoad();
-  });
+  }, [chainId]);
 
-  async function connect() {
-    try {
-      await activate(injected);
-      localStorage.setItem("isWalletConnected", "true");
-    } catch (e) {
-      notifications.showNotification({
-        id: "Error to connect wallet ",
-        color: "red",
-        message: `activate (Error with injected wallet) : ${e}`,
-        autoClose: false,
-      });
-    }
-  }
   /*
   useEffect(() => {
     WorkflowStatus();
@@ -97,7 +81,21 @@ function headerLayout() {
       });
     }
     return () => setProviderName(null);
-  }, [provider]);
+  }, [chainId]);
+
+  async function connect() {
+    try {
+      await activate(injected);
+      localStorage.setItem("isWalletConnected", "true");
+    } catch (e) {
+      notifications.showNotification({
+        id: "Error to connect wallet ",
+        color: "red",
+        message: `activate (Error with injected wallet) : ${e}`,
+        autoClose: false,
+      });
+    }
+  }
 
   const connectWalletOnPageLoad = async () => {
     if (localStorage?.getItem("isWalletConnected") === "true") {
@@ -114,6 +112,7 @@ function headerLayout() {
       }
     }
   };
+
   /*
   async function WorkflowStatus() {
     if (active) {
@@ -219,7 +218,6 @@ function headerLayout() {
           Account
         </Text>
         <Text>Workflow : Inconnue</Text>
-
         {!active && (
           <Button
             leftIcon={<CurrencyEthereum />}
@@ -296,27 +294,7 @@ function headerLayout() {
             </Menu>
           </>
         )}
-
-        <Select
-          style={{ maxWidth: "100px" }}
-          placeholder="Pick one"
-          value={chainId?.toString()}
-          searchable
-          nothingFound="No network"
-          onChange={setNetworkName}
-          data={[
-            { value: "1", label: "Mainnet" },
-            { value: "3", label: "Ropsten" },
-            { value: "4", label: "Rinkeby" },
-            { value: "5", label: "Goerli" },
-            { value: "42", label: "Kovan" },
-            { value: "80001", label: "Mumbai" },
-            { value: "137", label: "Polygon" },
-            { value: "31337", label: "Hardhat" },
-            { value: "1337", label: "Ganache" },
-          ]}
-        />
-
+        <SwitchNetwork />
         <ActionIcon
           component="a"
           href="https://github.com/YM-Voting-System/react-interface"

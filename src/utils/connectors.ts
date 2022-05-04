@@ -6,20 +6,111 @@ const RPC_URLS = {
   4: "https://rinkeby.infura.io/v3/61778f8337ab4ddab531940abe721ab9",
 };
 
-/** Browser Extension/dApp Browser */
-/**
- * 1 : Mainnet
- * 3 : Ropsten
- * 4 : Rinkeby
- * 5 :  Gôrli
- * 42 : Kovan
- * 80001 : Mumbai (Polygon Testnet)
- * 137 : Polygon Mainnet
- * 1337 : Ganache
- * 31337 : Hardhat
- */
+/* Browser Extension/dApp Browser */
+export const SwitchProvider = {
+  mainnet: {
+    chainId: "0x1", //1 to decimal
+    rpcUrls: ["https://mainnet.infura.io/v3"],
+    chainName: "Ethereum Mainnet",
+    nativeCurrency: {
+      name: "ETH",
+      symbol: "ETH",
+      decimals: 18,
+    },
+    blockExplorerUrls: ["https://etherscan.io"],
+  },
+  ropsten: {
+    chainId: "0x3", //3 to decimal
+    rpcUrls: ["https://ropsten.infura.io/v3/"],
+    chainName: "Ropsten Test Network",
+    nativeCurrency: {
+      name: "ETH",
+      symbol: "ETH",
+      decimals: 18,
+    },
+    blockExplorerUrls: ["https://ropsten.etherscan.io"],
+  },
+  rinkeby: {
+    chainId: "0x4", //4 to decimal
+    rpcUrls: ["https://rinkeby.infura.io/v3/"],
+    chainName: "Rinkeby Test Network",
+    nativeCurrency: {
+      name: "ETH",
+      symbol: "ETH",
+      decimals: 18,
+    },
+    blockExplorerUrls: ["https://rinkeby.etherscan.io"],
+  },
+  goerli: {
+    chainId: "0x5", //4 to decimal
+    rpcUrls: ["https://goerli.infura.io/v3/"],
+    chainName: "Goerli Test Network",
+    nativeCurrency: {
+      name: "ETH",
+      symbol: "ETH",
+      decimals: 18,
+    },
+    blockExplorerUrls: ["https://goerli.etherscan.io"],
+  },
+  kovan: {
+    chainId: "0x2A", //42 to decimal
+    rpcUrls: ["https://kovan.infura.io/v3/"],
+    chainName: "Kovan Test Network",
+    nativeCurrency: {
+      name: "ETH",
+      symbol: "ETH",
+      decimals: 18,
+    },
+    blockExplorerUrls: ["https://kovan.etherscan.io"],
+  },
+  mumbai: {
+    chainId: "0x13881", //80001 to decimal
+    rpcUrls: ["https://matic-mumbai.chainstacklabs.com"],
+    chainName: "Mumbai",
+    nativeCurrency: {
+      name: "MATIC",
+      symbol: "MATIC",
+      decimals: 18,
+    },
+    blockExplorerUrls: ["https://mumbai.polygonscan.com"],
+  },
+  polygon: {
+    chainId: "0x89", //137  to decimal
+    rpcUrls: ["https://rpc-mainnet.matic.network/"],
+    chainName: "Polygon",
+    nativeCurrency: {
+      name: "MATIC",
+      symbol: "MATIC",
+      decimals: 18,
+    },
+    blockExplorerUrls: ["https://polygonscan.com/"],
+  },
+  hardhat: {
+    chainId: "0x7A69", // 31337 in decimal
+    rpcUrls: ["http://localhost:8545"],
+    chainName: "Hardhat",
+    nativeCurrency: {
+      name: "ETH",
+      symbol: "ETH",
+      decimals: 18,
+    },
+    blockExplorerUrls: [""],
+  },
+  ganache: {
+    chainId: "0x539", //1337 in decimal
+    rpcUrls: ["http://localhost:7545/"],
+    chainName: "Ganache",
+    nativeCurrency: {
+      name: "ETH",
+      symbol: "ETH",
+      decimals: 18,
+    },
+    blockExplorerUrls: [""],
+  },
+};
+
 export const injected = new InjectedConnector({
-  supportedChainIds: [1, 3, 4, 5, 42, 137, 1337, 31337],
+  supportedChainIds: [1, 3, 4, 5, 42, 137, 31337],
 });
 
 /**QR Code */
