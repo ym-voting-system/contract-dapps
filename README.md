@@ -102,7 +102,8 @@ The web's most popular front-end template for building decentralized application
 - `npx hardhat clean` — Clears the cache a nd deletes all artifacts
 - `npx hardhat help` — Prints this message
 - `REPORT_GAS=true npx hardhat test` —
-- `npx hardhat run scripts/deploy.ts` — Runs a user-defined script after compiling
+- `npx hardhat run scripts/deployVoting.ts --network localhost` — Deploy smart contract to local network
+- `npx hardhat run scripts/deployVoting.ts --network rinkeby` — Deploy smart contract to testnet network
 - `TS_NODE_FILES=true npx ts-node scripts/deploy.ts` —
 - `npx eslint '**/\*.{js,ts}'` —
 - `npx eslint '**/_.{js,ts}' --fix` —
