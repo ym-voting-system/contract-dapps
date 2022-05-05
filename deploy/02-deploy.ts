@@ -4,14 +4,19 @@ import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
 
 const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
-  const Voting = await ethers.getContractFactory("Voting");
+  const CommownSWProxyFactory = await ethers.getContractFactory(
+    "CommownSWProxyFactory"
+  );
 
   //Instance of Voting contract
-  const voting = await Voting.deploy();
+  const commownSWProxyFactory = await CommownSWProxyFactory.deploy();
 
   //waiting of contract deployment
-  await voting.deployed();
+  await commownSWProxyFactory.deployed();
 
-  console.log("Voting deployed to:", voting.address);
+  console.log(
+    "Commown Shared Wallet Proxy Factory deployed to:",
+    commownSWProxyFactory.address
+  );
 };
 export default func;
