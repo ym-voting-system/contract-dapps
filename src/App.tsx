@@ -8,17 +8,6 @@ import { Routes, Route } from "react-router-dom";
 import { useWeb3React, UnsupportedChainIdError } from "@web3-react/core";
 
 /**
- * ! Provider Error */
-import {
-  NoEthereumProviderError,
-  UserRejectedRequestError as UserRejectedRequestErrorInjected,
-} from "@web3-react/injected-connector";
-import {
-  URI_AVAILABLE,
-  UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
-} from "@web3-react/walletconnect-connector";
-
-/**
  * * Mantine UI Library
  */
 import {
