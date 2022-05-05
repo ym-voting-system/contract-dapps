@@ -40,6 +40,10 @@ interface INetwork {
   blockExplorerUrls: Array<string>;
 }
 
+interface IWCProps {
+  activeSwitch?: boolean;
+}
+
 function getErrorMessage(error: Error | undefined) {
   if (error instanceof NoEthereumProviderError) {
     return "No Ethereum browser extension detected, install MetaMask on desktop or visit from a dApp browser on mobile.";
@@ -55,7 +59,7 @@ function getErrorMessage(error: Error | undefined) {
   }
 }
 
-function InjectedWalletConnection() {
+function InjectedWalletConnection({ activeSwitch }: IWCProps) {
   /* Web3 React Value */
   const context = useWeb3React();
   const {
@@ -68,7 +72,7 @@ function InjectedWalletConnection() {
     deactivate,
   } = context;
 
-  /* Network Value */
+  /* React Value */
   const [selectChainId, setSelectChainId] = useState<string | null>();
   const [networkName, setNetworkName] = useState<string | null>("unknown");
   const [providerName, setProviderName] = useState(null);
@@ -81,9 +85,6 @@ function InjectedWalletConnection() {
     display: "flex",
     gap: "10px",
   };
-
-  /* Components Value */
-  const select = useRef() as React.MutableRefObject<HTMLInputElement>;
 
   /* Injected wallet connection on load */
   useEffect(() => {
@@ -196,21 +197,33 @@ function InjectedWalletConnection() {
   /*
    * Switch Network
    */
-  const WalletSwitchOrAdd = (network: INetwork) => {
+  const WalletSwitchOrAdd = async (network: INetwork) => {
     try {
-      window.ethereum.request({
+      await window.ethereum.request({
         method: "wallet_switchEthereumChain",
         params: [{ chainId: network.chainId }],
       });
     } catch (error) {
-      window.ethereum.request({
-        method: "wallet_addEthereumChain",
-        params: [network],
-      });
+      const e = error as Error;
+      if (e.message.includes("wallet_addEthereumChain")) {
+        await window.ethereum.request({
+          method: "wallet_addEthereumChain",
+          params: [network],
+        });
+      } else {
+        notifications.showNotification({
+          id: "Switch Error",
+          color: "red",
+          message: `Error with switch network : ${e.message}`,
+          autoClose: true,
+        });
+      }
     }
   };
 
-  function SwitchNetwork() {
+  /* Components Value */
+  const select = useRef() as React.MutableRefObject<HTMLInputElement>;
+  function switchNetwork() {
     const {
       mainnet,
       ropsten,
@@ -282,12 +295,6 @@ function InjectedWalletConnection() {
           <Menu
             control={
               <Button
-                styles={(theme) => ({
-                  root: {
-                    textOverflow: "ellipsis",
-                    maxWidth: "190px",
-                  },
-                })}
                 leftIcon={<Alien />}
                 variant="outline"
                 uppercase
@@ -342,14 +349,14 @@ function InjectedWalletConnection() {
           </Menu>
         </>
       )}
-      {error?.name.includes("UnsupportedChainIdError") && (
+      {(error?.name?.includes("UnsupportedChainIdError") || activeSwitch) && (
         <>
           <Button
             leftIcon={<SwitchVertical />}
             uppercase
             variant="outline"
             color="yellow"
-            onClick={SwitchNetwork}
+            onClick={switchNetwork}
           >
             Switch Network
           </Button>
@@ -363,10 +370,12 @@ function InjectedWalletConnection() {
         searchable
         nothingFound="No network"
         onChange={setSelectChainId}
-        disabled={!error?.name.includes("UnsupportedChainIdError")}
+        //disabled={!error?.name.includes("UnsupportedChainIdError")}
         data={[
           { value: "1", label: "Ethereum", group: "Mainnet" },
+          { value: "137", label: "Polygon", group: "Mainnet" },
           { value: "4", label: "Rinkeby", group: "Testnet" },
+          { value: "80001", label: "Mumbai", group: "Testnet" },
           { value: "31337", label: "Hardhat", group: "Local" },
         ]}
       />

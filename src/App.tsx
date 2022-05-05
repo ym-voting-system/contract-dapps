@@ -27,6 +27,7 @@ import Home from "@pages/Home";
 import VoterManagment from "@pages/VoterManagment";
 import SessionManagement from "@pages/SessionManagement";
 import ProposalsPage from "@pages/Proposals";
+import CreateSharedWallet from "@pages/CreateSW";
 
 function App() {
   /*Theme Mode Management*/
@@ -51,7 +52,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route element={<Layout />}>
-              <Route path="/accounts/*" element={<VoterManagment />} />
+              <Route path="/accounts/*" element={<CreateSharedWallet />} />
+              <Route
+                path="/accounts/manage-voters"
+                element={<VoterManagment />}
+              />
               <Route
                 path="/accounts/workflow"
                 element={<SessionManagement />}
