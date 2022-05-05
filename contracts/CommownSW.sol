@@ -7,37 +7,57 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
 contract CommownSW is Initializable, UUPSUpgradeable, OwnableUpgradeable  {
 
+	//IER1155
+	//IERC721
+	//ERC1155Receiver
+	//ERC721Receiver
+
+
 	event WalletCreated(address indexed creator, address[] owners, uint256 confirmationNeeded);
 	event Deposit(address indexed sender, uint256 amount, uint256 balance);
 
     //Constant can be inizialized even with Proxies
     string public constant VERSION = "0.0.1";
 
-	struct Pocket {
-		uint256 pocketID; //Pocket ID
-		uint256 pocketEndTS; //End timestamp for adding shares to the pocket
-		uint256 totalShares; //Total of shares to reach
-		mapping(address => uint256) sharePerUser; //Share per user
+	enum PocketStatus {
+		Proposed,
+		Signing,
+		Executed
 	}
-	Pocket[] public pockets;
 
+	struct Pocket {
+		uint8 poketID;
+		
+		address to; //To whom the pocket will be buy
+		bytes data; //Data on chain representing the transaction
+		PocketStatus pStatus; //Status of the pocket
+		uint8 nbSign; //nb of sign of the pocket
+		uint256 currentAmount; //Current amount
+		uint256 totalAmount; //Total amount to reach
+		uint256 totalWithdrawed; //Total amount already withdrawed
+		mapping(address => uint256) amountPerUser; //Share per user
+		mapping(address => uint256) withdrawPerUser; //Amount of withdrawed ethers per user
+	}
+
+	Pocket[] public pockets;
 
 	//Component of a CommownWallet : List of owners of the contract, only those can call some of the functions
 	address[] public owners; 
 	mapping(address => bool) public isOwner;
 	uint8 public confirmationNeeded;
 
+	//Global Balance
+	uint256 public globalTotalWithdrawed; //Total of ethers already withdrawed
 	mapping(address => uint256) public balancePerUser; //Balance in Wei per User
-	
-	
-	
-	uint256 public totalAlreadyWithdrawed; //Total of ethers already withdrawed
-	mapping(address => uint256) public withdrawPerUser; //Amount of withdrawed ethers per user
+	mapping(address => uint256) public globalWithdrawPerUser; //Amount of withdrawed ethers per user
+
 
 	modifier isCommownOwner(address _sender){
 		require(isOwner[_sender],"not an owner");
 		_;
 	}
+
+
 
     /// @dev : function initialize
     function initialize(address[] memory _owners, uint8 _confirmationNeeded) initializer public {
@@ -70,6 +90,23 @@ contract CommownSW is Initializable, UUPSUpgradeable, OwnableUpgradeable  {
 		balancePerUser[msg.sender] += msg.value;
 		emit Deposit(msg.sender, msg.value, address(this).balance);
 	}
+
+	// proposePocket
+	// signPocket
+	// fundPocket
+	// revokeFundPocket
+	// revokeSignPocket
+	// executePocket == buy
+	// 
+
+
+
+
+
+
+
+
+
 
 	/* function createPocket(uint256 _ts, uint256 _amount) pure public isCommownOwner(msg.sender){
 		uint256 _pocketID = pockets.length;
