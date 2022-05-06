@@ -25,8 +25,7 @@ contract CommownSW is Initializable, UUPSUpgradeable, OwnableUpgradeable, IERC72
 		Executed
 	}
 
-	//Is it better to have Pocket721 Pocket1155 Pocket20 or Pocket (with mapping for each) ?
-	struct Pocket721 {
+	struct Pocket {
 		address to; //To whom the pocket will be buy
 		bytes data; //Data on chain representing the transaction
 		PocketStatus pStatus; //Status of the pocket
@@ -34,11 +33,13 @@ contract CommownSW is Initializable, UUPSUpgradeable, OwnableUpgradeable, IERC72
 		uint256 currentAmount; //Current amount
 		uint256 totalAmount; //Total amount to reach
 		uint256 totalWithdrawed; //Total amount already withdrawed
-		mapping(address => uint256) amountPerUser; //Share per user
+        mapping(address => uint256) amountPerUser; //Share per user
 		mapping(address => uint256) withdrawPerUser; //Amount of withdrawed ethers per user
-		mapping(address => uint256) items721; //NFT : ERC721 => ID ======> Cf question ?
+        mapping(address => uint256) items20; //ERC20 => amount
+        mapping(address => mapping(uint256 => uint256)) items721; //ERC721 => ID => quantity
+        mapping(address => mapping(uint256 => uint256)) items1155; //ERC1155 => ID => amount   
 	}
-	Pocket721[] public pockets721;
+	Pocket[] public pockets;
 	mapping(uint256 => mapping(address => bool)) public isSigned; //poketID => commownSW owner => bool
 
 
@@ -104,14 +105,22 @@ contract CommownSW is Initializable, UUPSUpgradeable, OwnableUpgradeable, IERC72
 	// sellPocket
 	// withdrawPocket
 	// withDrawGlobal
+	// allMethodForERC721
 
-	/* function createPocket(uint256 _ts, uint256 _amount) pure public isCommownOwner(msg.sender){
+	function proposePocket(address _to, bytes memory _data, uint256 _totalAmount) external isCommownOwner(msg.sender){
 		uint256 _pocketID = pockets.length;
-		pockets.push(Pocket({pocketID: _pocketID, pocketEndTS: _ts, totalShares: _amount, executed: false, numConfirmations: 0}));
+		
+		pockets.push(Pocket({
+			to:_to,
+			data: _data,
+			pStatus: PocketStatus.Proposed,
+			,,
+			totalAmount:_totalAmount,
+			,,,,,
+		}));
 
-		mapping(address => uint256) sharePerUser;
-		emit SubmitTransaction(msg.sender, txIndex, _to, _value, _data);
-	} */
+		emit ProposePocket(msg.sender, txIndex, _to, _value, _data);
+	}
 
 
 	//Todo : Emit event withdrawal
@@ -128,4 +137,52 @@ contract CommownSW is Initializable, UUPSUpgradeable, OwnableUpgradeable, IERC72
 		(bool success,) = payable(msg.sender).call{value:toPay}("");
 		require(success,"transaction failed");
 	} */
+}
+
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.13;
+    
+contract testProposePocket{
+
+    enum PocketStatus {
+		Proposed,
+		Signing,
+		Executed
+	}
+
+	struct Pocket {
+		address to; //To whom the pocket will be buy
+		bytes data; //Data on chain representing the transaction
+		PocketStatus pStatus; //Status of the pocket
+		uint256 nbSign; //nb of sign of the pocket
+		uint256 currentAmount; //Current amount
+		uint256 totalAmount; //Total amount to reach
+		uint256 totalWithdrawed; //Total amount already withdrawed
+        mapping(address => uint256) amountPerUser; //Share per user
+		mapping(address => uint256) withdrawPerUser; //Amount of withdrawed ethers per user
+        mapping(address => uint256) items20; //ERC20 => amount
+        mapping(address => mapping(uint256 => uint256)) items721; //ERC721 => ID => quantity
+        mapping(address => mapping(uint256 => uint256)) items1155; //ERC1155 => ID => amount   
+	}
+	Pocket[] public pockets;
+	mapping(uint256 => mapping(address => bool)) public isSigned; //poketID => commownSW owner => bool
+
+    function proposePocket(address _to, bytes memory _data, uint256 _totalAmount) external {
+		uint256 _pocketID = pockets.length;
+        pockets.push();
+        pockets[_pocketID].to=_to;
+        pockets[_pocketID].data=_data;
+        pockets[_pocketID].pStatus=PocketStatus.Proposed;
+        pockets[_pocketID].totalAmount=_totalAmount;
+	}
+}
+
+contract TestContract {
+    uint public i;
+	function callMe(uint x) public {
+        i += x;
+    }
+    function getData(uint x) public pure returns (bytes memory) {
+        return abi.encodeWithSignature("callMe(uint256)", x);
+    }
 }
