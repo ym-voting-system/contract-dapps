@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/ym-voting-system/react-interface/compare/v1.2.2...v1.2.3) (2022-05-06)
+
+
+### Bug Fixes
+
+* **hardhat:** remove hardhat-ethernal ([db48511](https://github.com/ym-voting-system/react-interface/commit/db48511de2fd22c1c92711ffec857fdfd4203323))
+
 ## [1.2.2](https://github.com/ym-voting-system/react-interface/compare/v1.2.1...v1.2.2) (2022-04-28)
 
 
