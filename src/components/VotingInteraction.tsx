@@ -1,5 +1,6 @@
 /*
- * Mantine UI Library */
+ * Mantine UI Library
+ */
 import { Button, Group, Text, TextInput, Title } from "@mantine/core";
 
 import {

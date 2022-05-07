@@ -18,7 +18,7 @@ function useCommownSWProxyFactory() {
         if (active) {
           const signer = provider.getSigner();
           const instanceContract = new ethers.Contract(
-            CommownSWProxyFactory.address,
+            CommownSWProxyFactory.hardhat,
             CommownSWProxyFactory.abi,
             signer
           );

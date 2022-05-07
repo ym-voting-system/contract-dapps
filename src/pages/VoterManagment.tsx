@@ -1,22 +1,25 @@
 /*
- * React Utils*/
-import { useEffect, useState } from "react";
+ * * React Utils
+ */
+import { useState, MouseEvent } from "react";
 
 /*
- * Mantine UI Library */
+ * * Mantine UI Library
+ */
 import { Button, Paper, Title } from "@mantine/core";
-import { useNotifications } from "@mantine/notifications";
 
 /*YM Components */
 import VotingInteraction from "@components/VotingInteraction";
 
 /*
- * Wallet && Blockchain interaction */
+ * *  Wallet && Blockchain interaction
+ */
 
 import { ethers } from "ethers";
 import { useWeb3React } from "@web3-react/core";
 import { Voting } from "@utils/getContract";
 import useVoting from "@hooks/useVoting";
+import { useNotifications } from "@mantine/notifications";
 
 function VoterManagment() {
   /* React */
@@ -54,7 +57,7 @@ function VoterManagment() {
   async function isWhitelisted() {
     if (active) {
       const signer = provider.getSigner();
-      const contract = new ethers.Contract(Voting.address, Voting.abi, signer);
+      const contract = new ethers.Contract(Voting.hardhat, Voting.abi, signer);
       try {
         const transaction = await contract.isWhitelisted(whitelisted);
         const { isRegistered } = transaction;
@@ -84,7 +87,7 @@ function VoterManagment() {
    *
    */
 
-  function handleDeployContract(event: MouseEvent<HTMLButtonElement>) {
+  /*function handleDeployContract(event: MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
     async function deployVotingContract(signer: Signer): Promise<void> {
       const contract = new ethers.ContractFactory(
@@ -108,6 +111,33 @@ function VoterManagment() {
     const signer = provider.getSigner();
     deployVotingContract(signer);
   }
+*/
+
+  function handleDeployContract(event: MouseEvent<HTMLButtonElement>) {
+    event.preventDefault();
+    async function deployVotingContract(signer: any): Promise<void> {
+      const contract = new ethers.ContractFactory(
+        Voting.abi,
+        Voting.bytecode,
+        signer
+      );
+
+      try {
+        const votingContract = await contract.deploy();
+
+        await votingContract.deployed();
+
+        window.alert(`Voting deployed to: ${votingContract.address}`);
+      } catch (error: any) {
+        window.alert(
+          "Error!" + (error && error.message ? `\n\n${error.message}` : "")
+        );
+      }
+    }
+    const signer = provider.getSigner();
+    deployVotingContract(signer);
+  }
+
   return (
     <div>
       <Paper

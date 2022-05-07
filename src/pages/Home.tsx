@@ -2,8 +2,6 @@ import {
   createStyles,
   Image,
   Title,
-  Button,
-  Group,
   Text,
   List,
   ThemeIcon,

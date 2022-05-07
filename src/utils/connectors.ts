@@ -87,7 +87,7 @@ export const SwitchProvider = {
   },
   hardhat: {
     chainId: "0x7A69", // 31337 in decimal
-    rpcUrls: ["http://localhost:8545"],
+    rpcUrls: ["http://localhost:8545/"],
     chainName: "Hardhat",
     nativeCurrency: {
       name: "ETH",
@@ -110,7 +110,7 @@ export const SwitchProvider = {
 };
 
 export const injected = new InjectedConnector({
-  supportedChainIds: [1, 3, 4, 5, 42, 137, 31337],
+  supportedChainIds: [4, 31337],
 });
 
 /**QR Code */
