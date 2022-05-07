@@ -4,7 +4,8 @@
         // same as our --compilerOptions flag and our TS_NODE_COMPILER_OPTIONS environment variable
         "compilerOptions": {
             "module": "commonjs",
-            "esModuleInterop": true
+            "esModuleInterop": true,
+            "resolveJsonModule": true
         },
         "include": ["./scripts", "./deploy", "./test"],
         "files": ["./hardhat.config.ts"]
