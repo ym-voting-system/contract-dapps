@@ -49,8 +49,8 @@ The web's most popular front-end template for building decentralized application
 
 
 > **INDICATORS**
-> + DONE : ✅ - [production](https://ym-time-tracker.netlify.app/)
-> + IN PROGRESS : 🔁 - [development](https://develop--ym-time-tracker.netlify.app/)
+> + DONE : ✅ - [production](https://ym-voting-system.vercel.app)
+> + IN PROGRESS : 🔁 - [development](https://github.com/ym-voting-system/contract-dapps/deployments/activity_log?environment=Preview)
 > + TO DO : 🚧
 
 ### Guides
