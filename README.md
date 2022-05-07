@@ -7,9 +7,6 @@
 
 Repository containing the contracts and the interface of the react voting system project
 
-[React](https://reactjs.org/), [ethers.js](https://docs.ethers.io/), and
-[Solidity](https://soliditylang.org/).
-
 -   [Getting Started](#getting-started)
 -   [Directory Structure](#directory-sructure)
 -   [Tech Stack](#tech-stack)
