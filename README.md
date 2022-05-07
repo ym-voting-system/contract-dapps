@@ -47,15 +47,26 @@ The web's most popular front-end template for building decentralized application
 
 ## Features
 
--   📦 Registration of a blank list of voters.
--   🦾 The administrator to start the proposal registration session.
--   ⚡️ Registered voters to register their proposals.
--   🦾 The administrator to end the proposal registration session.
--   🦾 The administrator to begin the voting session.
--   ⚡️ Registered voters to vote for their preferred proposals.
--   🦾 The administrator to end the voting session.
--   🦾 The administrator to tally the votes.
--   🔥 Everyone to see the results.
+
+> **INDICATORS**
+> + DONE : ✅ - [production](https://ym-time-tracker.netlify.app/)
+> + IN PROGRESS : 🔁 - [development](https://develop--ym-time-tracker.netlify.app/)
+> + TO DO : 🚧
+
+### Guides
+
+| RELEASE |DESCRIPTION|STATUS|
+|:--:|----|:--:|
+|[v0.1.0](https://github.com/ym-voting-system/contract-dapps/releases/tag/v1.3.0)| 🛠️ Technicals Environnement | ✅ |
+|[v0.2.0](https://github.com/ym-voting-system/contract-dapps/releases/tag/v1.3.0)| 📦 Registration of a blank list of voters.) | ✅ |
+|[v0.3.0](https://github.com/ym-voting-system/contract-dapps/releases/tag/v1.3.0)| 🦾 The administrator to start the proposal registration session.) | ✅ |
+|[v0.4.x](https://github.com/ym-voting-system/contract-dapps/releases/tag/v1.3.0)| ⚡️ Registered voters to register their proposals.)| ✅ |
+|[v0.5.x](https://github.com/ym-voting-system/contract-dapps/releases/tag/v1.3.0)| 🦾 The administrator to end the proposal registration session) | ✅ |
+|[v0.6.0](https://github.com/ym-voting-system/contract-dapps/releases/tag/v1.3.0)| 🦾 The administrator to begin the voting session. | ✅ |
+|[v0.7.0](https://github.com/ym-voting-system/contract-dapps/releases/tag/v1.3.0)| ⚡️ Registered voters to vote for their preferred proposals. | ✅ |
+|v0.8.0| 🦾 The administrator to end the voting session. |🔁|
+|v0.9.0| 🦾 The administrator to tally the votes. |🚧|
+|v1.0.0| 🔥 Everyone to see the results. |🚧|
 
 ## Directory Structure <a name="directory-sructure"></a>
 
