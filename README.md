@@ -5,7 +5,8 @@
 ![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/younesmjl/a34d78b87f5b70f82d398e90ba761749/raw/voting-dapps-badges.json)
 [![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
-The web's most popular front-end template for building decentralized application with
+Repository containing the contracts and the interface of the react voting system project
+
 [React](https://reactjs.org/), [ethers.js](https://docs.ethers.io/), and
 [Solidity](https://soliditylang.org/).
 
