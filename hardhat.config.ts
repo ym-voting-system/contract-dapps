@@ -8,7 +8,7 @@ import "@nomiclabs/hardhat-solhint";
 import "@openzeppelin/hardhat-upgrades";
 import "@typechain/hardhat";
 import "hardhat-gas-reporter";
-//import "hardhat-ethernal";
+import "hardhat-ethernal";
 import "solidity-coverage";
 import "hardhat-deploy";
 import "hardhat-docgen";

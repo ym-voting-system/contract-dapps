@@ -14,9 +14,11 @@ The web's most popular front-end template for building decentralized application
 -   [Tech Stack](#tech-stack)
 -   [Requirements](#requirements)
 -   [Scripts](#scripts)
+    -   [Backend](#repository)
     -   [Backend](#backend)
     -   [Frontend](#frontend)
 -   [How to Update](#how-to-update)
+- [Usefull links](#usefull-links)
 
 ## Getting Started <a name="getting-started"></a>
 
@@ -100,7 +102,7 @@ The web's most popular front-end template for building decentralized application
 
 ## Scripts <a name="scripts"></a>
 
-### Repository
+### Repository <a name="repository"></a>
 
 -   `yarn prepare` — Install and configure husky hooks system
 -   `yarn commit` — Run commitizen command line to receive assistance in drafting commit
@@ -138,6 +140,15 @@ The web's most popular front-end template for building decentralized application
 -   `yarn set version latest` — Bump Yarn to the latest version
 -   `yarn upgrade-interactive` — Update Node.js modules (dependencies)
 -   `yarn pnpify --sdk vscode` — Update TypeScript, ESLint, and Prettier settings in VSCode
+
+## Usefull links <a name="usefull-links"></a>
+- [uups-proxies-tutorial-solidity-javascript](https://forum.openzeppelin.com/t/uups-proxies-tutorial-solidity-javascript/7786)
+- [Github OpenZeppelino proxy](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/proxy)
+- [UUPS Modern walkthrough](https://r48b1t.medium.com/universal-upgrade-proxy-proxyfactory-a-modern-walkthrough-22d293e369cb)
+- [UUPS vs Transparent & Deploying more efficient proxy](https://www.youtube.com/watch?v=kWUDTZhxKZI)
+- [Old SDK Package from OZ](https://github.com/OpenZeppelin/openzeppelin-sdk/tree/master/packages/lib/contracts/upgradeability)
+- [UUPS Factory](https://forum.openzeppelin.com/t/deploying-upgradeable-proxies-and-proxy-admin-from-factory-contract/12132/12)
+
 
 ---
 
