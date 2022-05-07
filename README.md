@@ -53,8 +53,6 @@ The web's most popular front-end template for building decentralized application
 > + IN PROGRESS : 🔁 - [development](https://github.com/ym-voting-system/contract-dapps/deployments/activity_log?environment=Preview)
 > + TO DO : 🚧
 
-### Guides
-
 | RELEASE |DESCRIPTION|STATUS|
 |:--:|----|:--:|
 |[v0.1.0](https://github.com/ym-voting-system/contract-dapps/releases/tag/v1.3.0)| 🛠️ Technicals Environnement | ✅ |
