@@ -1,3 +1,23 @@
+# [1.3.0](https://github.com/ym-voting-system/react-interface/compare/v1.2.3...v1.3.0) (2022-05-07)
+
+
+### Bug Fixes
+
+* **ethernal:** delete ehernal ([454e966](https://github.com/ym-voting-system/react-interface/commit/454e966fc1b2626a8754b3b534bade80d0f3df0d))
+* **ethernal:** delete ehernal ([8da2174](https://github.com/ym-voting-system/react-interface/commit/8da217425e9409d607d939940110281503d96d66))
+* **tsconfig:** add json resolver ([9ea569f](https://github.com/ym-voting-system/react-interface/commit/9ea569fc065ce2db73bfcf7051cf75753a6e31f0))
+
+
+### Features
+
+* **commownSWProxyFactory:** deploy commownSWProxyFactory ([8b01158](https://github.com/ym-voting-system/react-interface/commit/8b0115818d7a1a1d0c3f264c1e052436cfe65b5d))
+* **create-wallet:** add front for creation shared wallet ([2a0feda](https://github.com/ym-voting-system/react-interface/commit/2a0feda92b65bf966b95013acc15b595bfef22be))
+* **DEPLOY:** deploiement ([a356e18](https://github.com/ym-voting-system/react-interface/commit/a356e180a2988fd06ab63c162ffef4379ff3b826))
+* **docgen:** add documentations for smart contract ([4334d12](https://github.com/ym-voting-system/react-interface/commit/4334d125f9083f7e2c86de8936825e4359581036))
+* **migration:** refactoring for simplify dapps deployment ([8722733](https://github.com/ym-voting-system/react-interface/commit/87227330846323bf0d9d04b532ea171789fc5883))
+* **starting the pocket developpement:** pocket developpement initialization ([ce59847](https://github.com/ym-voting-system/react-interface/commit/ce59847c05f81148019e02f72bfb9f1954426037))
+* **Switch:** add switch network ([0af786b](https://github.com/ym-voting-system/react-interface/commit/0af786be8c0d5d0b81707406ca8f5454ed961008))
+
 ## [1.2.3](https://github.com/ym-voting-system/react-interface/compare/v1.2.2...v1.2.3) (2022-05-06)
 
 
