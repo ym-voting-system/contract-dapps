@@ -1,40 +1,12 @@
 {
-  "ts-node": {
-    // these options are overrides used only by ts-node
-    // same as our --compilerOptions flag and our TS_NODE_COMPILER_OPTIONS environment variable
-    "compilerOptions": {
-      "module": "commonjs",
-      "esModuleInterop": true
-    },
-    "include": ["./scripts", "./deploy", "./test"],
-    "files": ["./hardhat.config.ts"]
-  },
-  "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
-    "skipLibCheck": false,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "baseUrl": "./src",
-    "paths": {
-      "@components/*": ["./components/*"],
-      "@layout/*": ["./layout/*"],
-      "@pages/*": ["./pages/*"],
-      "@utils/*": ["./utils/*"],
-      "@contract/*": ["./artifacts/contracts/*"],
-      "@hooks/*": ["./hooks/*"]
+    "ts-node": {
+        // these options are overrides used only by ts-node
+        // same as our --compilerOptions flag and our TS_NODE_COMPILER_OPTIONS environment variable
+        "compilerOptions": {
+            "module": "commonjs",
+            "esModuleInterop": true
+        },
+        "include": ["./scripts", "./deploy", "./test"],
+        "files": ["./hardhat.config.ts"]
     }
-  },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
 }
